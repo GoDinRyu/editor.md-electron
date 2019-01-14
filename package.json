@@ -1,0 +1,49 @@
+{
+  "name": "editor.md",
+  "version": "1.0.0",
+  "description": "Local Markdown Editor",
+  "main": "main.js",
+  "scripts": {
+    "dev": "electron .",
+    "dist": "electron-builder"
+  },
+  "repository": "",
+  "keywords": [
+    "Markdown",
+    "Editor"
+  ],
+  "author": "GoDin",
+  "license": "MIT",
+  "dependencies": {
+    "mammoth": "^1.4.7",
+    "node-http-server": "8.1.2"
+  },
+  "devDependencies": {
+    "electron": "^4.0.1",
+    "electron-builder": "^20.38.4"
+  },
+  "build": {
+    "appId": "com.wisedu.app",
+    "productName": "Editor.md",
+    "directories":{
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "nsis":{
+      "oneClick": true,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": false,
+      "installerIcon": "build/editormd.ico",
+      "uninstallerIcon": "build/editormd-uninstaller.ico",
+      "unicode": true,
+      "runAfterFinish": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "menuCategory": true,
+      "shortcutName": "Editor.md"
+    },
+    "asar": false,
+    "asarUnpack":["**/*.exe"]
+  }
+}
